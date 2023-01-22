@@ -1,0 +1,31 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>MENSAJERIA</h1>
+
+{% endblock %}
+
+{% block subtitulo %}
+
+<span class="subheading">CHARLA CON OTROS USUARIOS</span>
+
+{% endblock %}
+
+{% block contenido %}
+
+<form action="{% url 'enviarMensaje' %}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+    
+    <table>
+        {{form.as_table}}
+
+    </table>
+
+    <input type="submit" value="Enviar">
+</form>
+
+<h1>{{ mensaje }}</h1>
+{% endblock %}
+

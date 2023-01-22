@@ -1,0 +1,32 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>EDITANDO</h1>
+
+{% endblock %}
+
+{% block subtitulo %}
+
+<span class="subheading">USUARIO: {{ user.username }}</span>
+
+
+
+{% endblock %}
+
+{% block contenido %}
+<form action="{% url 'editarPerfil' %}" method="POST"> {% csrf_token %}
+
+    <table>
+
+        {{form.as_table}}
+
+    </table>
+
+    <input type="submit" value="Modificar Datos">
+</form>
+
+{% endblock %}
+

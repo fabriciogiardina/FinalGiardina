@@ -1,0 +1,37 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>POSTEOS</h1>
+
+{% endblock %}
+
+{% block subtitulo %}
+
+<span class="subheading">Lista de Posteos</span>
+
+{% endblock %}
+
+{% block contenido %}
+<h1>{{ mensaje }}</h1>
+{% for post in p %}
+    
+<div>
+    <img src="{{ post.imagen }}" alt="">
+    <h1><a href="{% url 'verPosteo' post.id %}">{{ post.titulo }}</a></h1>
+    <h2>{{ post.subtitulo }}</h2>
+    <p>{{ post.fecha }} - {{ post.autor }}
+    {% if post.autor == user %}    
+    <a class="btn btn-danger" href="{% url 'eliminarPosteo' post.id %}">Eliminar</a>
+    <a class="btn btn-success" href="{% url 'editarPosteo' post.id %}">Editar</a>
+    {% endif %}    
+</div>
+<hr>
+
+{% endfor %}
+
+
+{% endblock %}
+

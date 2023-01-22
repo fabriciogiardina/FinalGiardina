@@ -1,0 +1,30 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>INGRESA</h1>
+
+{% endblock %}
+
+{% block subtitulo %}
+
+<span class="subheading">PARA COMENZAR!!</span>
+
+{% endblock %}
+
+{% block contenido %}
+<form action="{% url 'login' %}" method="POST"> {% csrf_token %}
+    
+    <table>
+
+        {{form.as_table}}
+
+    </table>
+
+    <input type="submit" value="Iniciar Sesion">
+</form>
+
+{% endblock %}
+

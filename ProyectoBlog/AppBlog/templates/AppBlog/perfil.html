@@ -1,0 +1,29 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>PERFIL</h1>
+
+{% endblock %}
+
+{% block subtitulo %}
+
+<span class="subheading">TU INFORMACION</span>
+
+{% endblock %}
+
+{% block contenido %}
+
+<li>Nombre Usuario: {{ user.username }}</li>
+<li>Email: {{ user.email }}</li>
+<li>Nombre: {{ user.first_name }}</li>
+<li>Nombre: {{ user.last_name }}</li>
+
+<a class="btn btn-warning" href="{% url 'agregarAvatar'  %}">Agregar Avatar</a>
+
+
+<h1>{{ mensaje }}</h1>
+{% endblock %}
+

@@ -1,0 +1,31 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>POSTEO</h1>
+
+{% endblock %}
+
+{% block subtitulo %}
+
+<span class="subheading">¿En que estas pensando?</span>
+
+{% endblock %}
+
+{% block contenido %}
+
+<form action="{% url 'agregarPost' %}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+    
+    <table>
+        {{form.as_table}}
+
+    </table>
+
+    <input type="submit" value="POSTEAR">
+</form>
+
+<h1>{{ mensaje }}</h1>
+{% endblock %}
+

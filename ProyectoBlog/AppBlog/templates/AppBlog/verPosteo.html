@@ -1,0 +1,28 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>POSTEOS</h1>
+
+{% endblock %}
+
+{% block subtitulo %}
+
+<span class="subheading">Lista de Posteos</span>
+
+{% endblock %}
+
+{% block contenido %}
+
+
+    
+<h1>{{ posteo.titulo }}</h1>
+<h2>{{ posteo.subtitulo }}</h2><hr>
+{{ posteo.cuerpo }}
+
+
+
+{% endblock %}
+

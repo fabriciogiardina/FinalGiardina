@@ -1,0 +1,33 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>TUS MENSAJES</h1>
+
+{% endblock %}
+
+{% block subtitulo %}
+
+<span class="subheading">TU LISTA DE MENSAJES</span>
+
+{% endblock %}
+
+{% block contenido %}
+<h1>{{ mensaje }}</h1>
+{% for mensaje in mensajes %}
+    
+<div>
+    
+    <h2>De: {{ mensaje.envia }}</h2>
+    <p>{{ mensaje.cuerpo }}</p> 
+    <p>Fecha: {{ mensaje.fecha }}</p>
+</div>
+<hr>
+
+{% endfor %}
+
+
+{% endblock %}
+
